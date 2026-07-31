@@ -1,0 +1,169 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Body records · DailyAble</title><link rel="stylesheet" href="/styles.css?v=20260727a"><link rel="stylesheet" href="/portal.css?v=20260730b"><link rel="stylesheet" href="/v3.css?v=20260731f"></head><body class="portal-shell" data-role-shell="participant"><a class="skip-link" href="#main">Skip to main content</a><header class="portal-header"><a class="brand" href="/"><img src="/brand-mark.svg" alt="" width="36" height="36"><span>DailyAble</span></a><span class="demo-chip" data-en="DEMO DATA" data-zh="模擬資料">DEMO DATA</span></header><div class="role-layout"><aside class="participant-dock"><div><p class="role-label">PARTICIPANT</p><strong>Alex</strong><small data-en="Demo profile" data-zh="模擬身分">Demo profile</small></div><nav aria-label="Participant navigation"><a href="/app"><span data-en="Home" data-zh="首頁">Home</span></a><a href="/app/check-in"><span data-en="Today’s check-in" data-zh="今日回報">Today’s check-in</span></a><a href="/app/records" class="active" aria-current="page"><span data-en="Records &amp; trend" data-zh="紀錄與趨勢">Records &amp; trend</span></a><a href="/app/summary"><span data-en="Visit summary" data-zh="就診摘要">Visit summary</span></a><a href="/app/support"><span data-en="Support &amp; resources" data-zh="支持與資源">Support &amp; resources</span></a><a href="/app/privacy"><span data-en="Data, sharing &amp; people" data-zh="資料、分享與對象">Data, sharing &amp; people</span></a></nav><a class="role-switch" data-role-switch href="/session?next=/supporter"><span data-en="Switch to supporter view" data-zh="切換到支持者後台">Switch to supporter view</span><b>↗</b></a></aside><main id="main" class="participant-main">
+
+<div class="page-heading"><div><p class="page-kicker" data-en="BODY RECORDS" data-zh="身體紀錄">BODY RECORDS</p><h1 data-en="Write down what you can. Blank is fine." data-zh="能記多少就記多少，留白也沒關係。">Write down what you can. Blank is fine.</h1><p data-en="The time fills itself in. Everything else can be left blank — one number is still worth writing down, and your doctor can read the blanks too." data-zh="時間會自己記下來，其他都可以空著。只寫一個數字也值得記，空著的地方醫師一樣看得懂。">The time fills itself in. Everything else can be left blank — one number is still worth writing down, and your doctor can read the blanks too.</p></div></div>
+
+<article class="portal-card full trend-first"><h2 data-en="Your own trend" data-zh="你自己的變化">Your own trend</h2><p class="field-hint" data-en="Each line is your own — the readings you took and the meals you wrote down, over the stretch you picked. Gaps are days with nothing written down. Nothing here is compared with anyone else, and nothing here is a diagnosis." data-zh="每一條線都是你自己的紀錄——量到的數字跟吃下去的東西，範圍就是你選的那一段。斷掉的地方是那幾天沒有記。這裡不會拿你跟別人比，也不做任何診斷。">Each line is your own — the readings you took and the meals you wrote down, over the stretch you picked. Gaps are days with nothing written down. Nothing here is compared with anyone else, and nothing here is a diagnosis.</p><div class="filter-row" id="trend-range" role="group" aria-label="Time range" data-aria-en="Time range" data-aria-zh="時間範圍"><button class="filter active" type="button" data-range="7" data-en="This week" data-zh="這週">This week</button><button class="filter" type="button" data-range="30" data-en="This month" data-zh="這個月">This month</button><button class="filter" type="button" data-range="90" data-en="This quarter" data-zh="這一季">This quarter</button></div><div class="filter-row" id="trend-series" role="group" aria-label="Which readings to show" data-aria-en="Which readings to show" data-aria-zh="要顯示哪幾項" data-i18n-ignore="true"></div><div id="trend-charts" class="trend-charts" data-i18n-ignore="true"></div></article>
+
+<article class="portal-card full trend-first"><h2 data-en="How the days felt" data-zh="這些日子的感覺">How the days felt</h2><p class="field-hint" data-en="Your own check-in answers over the same stretch: how your energy was, and whether your routine held. The check-in does not ask you to score your mood, so nothing here is scored — these are the answers you picked, placed on a timeline." data-zh="同一段時間裡你自己回報的答案：精神怎麼樣、作息有沒有維持住。回報表單沒有要你替心情打分數，所以這裡也不打分——就是你選的那些答案，排在時間軸上。">Your own check-in answers over the same stretch: how your energy was, and whether your routine held. The check-in does not ask you to score your mood, so nothing here is scored — these are the answers you picked, placed on a timeline.</p><div id="feeling-chart" class="trend-charts" data-i18n-ignore="true"></div></article>
+
+<div class="portal-grid">
+  <article class="portal-card wide">
+    <h2 data-en="Write down a reading" data-zh="記一筆">Write down a reading</h2>
+    <form id="vital-form" class="record-form" novalidate>
+      <fieldset><legend data-en="Blood pressure" data-zh="血壓">Blood pressure</legend>
+        <div class="field-row">
+          <label><span data-en="Systolic (mmHg)" data-zh="收縮壓（mmHg）">Systolic (mmHg)</span><input name="systolic" type="number" inputmode="numeric" min="40" max="300" placeholder="—"></label>
+          <label><span data-en="Diastolic (mmHg)" data-zh="舒張壓（mmHg）">Diastolic (mmHg)</span><input name="diastolic" type="number" inputmode="numeric" min="20" max="200" placeholder="—"></label>
+          <label><span data-en="Pulse (bpm)" data-zh="脈搏（次／分）">Pulse (bpm)</span><input name="pulse" type="number" inputmode="numeric" min="20" max="250" placeholder="—"></label>
+        </div>
+        <label><span data-en="Were you sitting or lying down?" data-zh="量的時候是坐著還是躺著？">Were you sitting or lying down?</span>
+          <select name="posture">
+            <option value="sitting" data-en="Sitting, rested" data-zh="坐姿、休息後">Sitting, rested</option>
+            <option value="lying" data-en="Lying down" data-zh="躺姿">Lying down</option>
+            <option value="standing" data-en="Standing" data-zh="站姿">Standing</option>
+            <option value="unspecified" selected data-en="Not noted" data-zh="未註明">Not noted</option>
+          </select>
+        </label>
+      </fieldset>
+
+      <fieldset><legend data-en="Blood glucose" data-zh="血糖">Blood glucose</legend>
+        <div class="field-row">
+          <label><span data-en="Blood glucose (mg/dL)" data-zh="血糖值（mg/dL）">Blood glucose (mg/dL)</span><input name="glucose" type="number" inputmode="decimal" min="10" max="800" placeholder="—"></label>
+          <label><span data-en="When was it taken?" data-zh="什麼時候量的？">When was it taken?</span>
+            <select name="glucoseContext">
+              <option value="fasting" data-en="Fasting" data-zh="空腹">Fasting</option>
+              <option value="post-meal-2h" data-en="Two hours after an ordinary meal" data-zh="一般吃飯後兩小時">Two hours after an ordinary meal</option>
+              <option value="ogtt-2h" data-en="Glucose tolerance test, 2nd hour" data-zh="葡萄糖耐受試驗第二小時">Glucose tolerance test, 2nd hour</option>
+              <option value="random" data-en="Any other time" data-zh="其他時間">Any other time</option>
+              <option value="unspecified" selected data-en="Not noted" data-zh="未註明">Not noted</option>
+            </select>
+          </label>
+        </div>
+        <p class="field-hint" data-en="If you can, say when you took it. The same number means something quite different before breakfast and after a meal." data-zh="可以的話順手寫一下是什麼時候量的。一樣的數字，早上還沒吃東西量、跟剛吃完飯量，代表的意思差很多。">If you can, say when you took it. The same number means something quite different before breakfast and after a meal.</p>
+      </fieldset>
+
+      <fieldset><legend data-en="Water" data-zh="飲水">Water</legend>
+        <label><span data-en="Total so far today (mL)" data-zh="今天到目前為止（mL）">Total so far today (mL)</span><input name="waterMl" type="number" inputmode="numeric" min="0" max="10000" placeholder="—"></label>
+      </fieldset>
+
+      <label><span data-en="Anything worth remembering" data-zh="想順手記下的事">Anything worth remembering</span><input name="note" type="text" maxlength="500" placeholder="—"></label>
+
+      <div class="form-actions"><button class="button primary" type="submit" data-en="Save this reading" data-zh="儲存這一筆">Save this reading</button></div>
+      <p id="vital-status" class="form-error" role="status" aria-live="polite"></p>
+    </form>
+  </article>
+
+  <article class="portal-card">
+    <h2 data-en="What you ate" data-zh="吃了什麼">What you ate</h2>
+    <form id="meal-form" class="record-form" novalidate>
+      <label><span data-en="Which meal" data-zh="哪一餐">Which meal</span>
+        <select name="mealSlot">
+          <option value="breakfast" data-en="Breakfast" data-zh="早餐">Breakfast</option>
+          <option value="lunch" data-en="Lunch" data-zh="午餐">Lunch</option>
+          <option value="dinner" data-en="Dinner" data-zh="晚餐">Dinner</option>
+          <option value="snack" data-en="Something in between" data-zh="點心">Something in between</option>
+          <option value="unspecified" selected data-en="Not noted" data-zh="未註明">Not noted</option>
+        </select>
+      </label>
+      <label><span data-en="Search for what you ate" data-zh="搜尋你吃的東西">Search for what you ate</span><input name="foodSearch" type="search" autocomplete="off" maxlength="40" placeholder="—" role="combobox" aria-expanded="false" aria-controls="food-options"></label>
+      <ul id="food-options" class="food-options" role="listbox" data-i18n-ignore="true" hidden></ul>
+      <div id="food-portions" class="filter-row" role="group" data-aria-en="Common portions" data-aria-zh="常見份量" data-i18n-ignore="true"></div>
+      <div class="field-row">
+        <label><span data-en="How much" data-zh="份量">How much</span><input name="quantity" type="number" inputmode="numeric" min="1" max="5000" placeholder="—"></label>
+        <label><span data-en="In your own words" data-zh="用你自己的話寫">In your own words</span><input name="description" type="text" maxlength="300" placeholder="—"></label>
+      </div>
+      <p id="food-preview" class="field-hint" data-i18n-ignore="true"></p>
+      <p class="field-hint" data-en="Pick a food and a portion and the numbers fill themselves in. You can also type them yourself, or write only what you ate." data-zh="選一個食物、填份量，數字會自己算出來。你也可以自己填，或只寫吃了什麼。">Pick a food and a portion and the numbers fill themselves in. You can also type them yourself, or write only what you ate.</p>
+      <div class="field-row">
+        <label><span data-en="Energy (kcal)" data-zh="熱量（大卡）">Energy (kcal)</span><input name="kcal" type="number" inputmode="numeric" min="0" max="10000" placeholder="—"></label>
+        <label><span data-en="Carbohydrate (g)" data-zh="醣類（克）">Carbohydrate (g)</span><input name="carbG" type="number" inputmode="decimal" min="0" max="2000" placeholder="—"></label>
+      </div>
+      <div class="field-row">
+        <label><span data-en="Protein (g)" data-zh="蛋白質（克）">Protein (g)</span><input name="proteinG" type="number" inputmode="decimal" min="0" max="2000" placeholder="—"></label>
+        <label><span data-en="Fat (g)" data-zh="脂肪（克）">Fat (g)</span><input name="fatG" type="number" inputmode="decimal" min="0" max="2000" placeholder="—"></label>
+      </div>
+      <div class="form-actions"><button class="button" type="submit" data-en="Save the meal" data-zh="儲存這一餐">Save the meal</button></div>
+      <p id="meal-status" class="form-error" role="status" aria-live="polite"></p>
+    </form>
+  </article>
+
+  <article class="portal-card">
+    <h2 data-en="How you were told to take it" data-zh="醫師怎麼交代你吃">How you were told to take it</h2>
+    <p class="field-hint" data-en="Write down what you were prescribed and how often. Without it, a count of doses has nothing to be read against — with it, you and your clinician can see which days matched." data-zh="把醫師開給你的藥跟一天要吃幾次寫下來。沒有這個，記幾次就只是一個數字；有了它，你跟醫師才看得出哪幾天對得上。">Write down what you were prescribed and how often. Without it, a count of doses has nothing to be read against — with it, you and your clinician can see which days matched.</p>
+    <form id="plan-form" class="record-form" novalidate>
+      <label><span data-en="Which medicine" data-zh="哪一種藥">Which medicine</span><input name="name" type="text" maxlength="200" placeholder="—"></label>
+      <div class="field-row">
+        <label><span data-en="Times a day" data-zh="一天幾次">Times a day</span><input name="timesPerDay" type="number" inputmode="numeric" min="1" max="12" placeholder="—"></label>
+        <label><span data-en="How to take it" data-zh="怎麼吃">How to take it</span><input name="instructions" type="text" maxlength="300" placeholder="—"></label>
+      </div>
+      <div class="form-actions"><button class="button" type="submit" data-en="Save this plan" data-zh="儲存這個計畫">Save this plan</button></div>
+      <p id="plan-status" class="form-error" role="status" aria-live="polite"></p>
+    </form>
+    <ul id="plan-list" class="permission-items" data-i18n-ignore="true"></ul>
+  </article>
+
+  <article class="portal-card">
+    <h2 data-en="Medicine you took" data-zh="吃了什麼藥">Medicine you took</h2>
+    <p class="field-hint" data-en="Add one entry each time you take something. The time and the number of times a day come from the entries themselves." data-zh="每吃一次就記一筆。吃的時間跟一天吃幾次，會從這些紀錄自己算出來。">Add one entry each time you take something. The time and the number of times a day come from the entries themselves.</p>
+    <form id="medication-form" class="record-form" novalidate>
+      <label><span data-en="What did you take?" data-zh="吃了什麼？">What did you take?</span><input name="name" type="text" maxlength="200" placeholder="—"></label>
+      <label><span data-en="Anything to note" data-zh="想順手記下的事">Anything to note</span><input name="note" type="text" maxlength="300" placeholder="—"></label>
+      <div class="form-actions"><button class="button" type="submit" data-en="Save this dose" data-zh="儲存這一次">Save this dose</button></div>
+      <p id="medication-status" class="form-error" role="status" aria-live="polite"></p>
+    </form>
+  </article>
+</div>
+
+<article class="portal-card full">
+  <h2 data-en="Recent readings" data-zh="最近的紀錄">Recent readings</h2>
+  <p class="field-hint" data-en="Blank means it was not recorded that day, not a reading of zero." data-zh="空白代表那天沒有記，不是量到零。">Blank means it was not recorded that day, not a reading of zero.</p>
+  <p class="field-hint table-scroll-hint" data-en="Swipe sideways to see every recorded field." data-zh="左右滑動可查看全部紀錄內容。">Swipe sideways to see every recorded field.</p>
+  <div class="table-scroll"><table class="record-table"><thead><tr>
+    <th data-en="When" data-zh="時間">When</th>
+    <th data-en="Blood pressure" data-zh="血壓">Blood pressure</th>
+    <th data-en="Pulse" data-zh="脈搏">Pulse</th>
+    <th data-en="Glucose" data-zh="血糖">Glucose</th>
+    <th data-en="Water" data-zh="飲水">Water</th>
+    <th data-en="Note" data-zh="備註">Note</th>
+  </tr></thead><tbody id="vital-rows" data-i18n-ignore="true"></tbody></table></div>
+</article>
+
+<article class="portal-card full">
+  <h2 data-en="Medicine taken recently" data-zh="最近吃的藥">Medicine taken recently</h2>
+  <p class="field-hint" data-en="Counted per day so you and your clinician can see how many times, and when." data-zh="依日期計次，你跟醫師都看得到一天吃了幾次、分別是什麼時候。">Counted per day so you and your clinician can see how many times, and when.</p>
+  <div class="table-scroll"><table class="record-table"><thead><tr>
+    <th data-en="Day" data-zh="日期">Day</th>
+    <th data-en="Times that day" data-zh="當天次數">Times that day</th>
+    <th data-en="What was taken" data-zh="吃了什麼">What was taken</th>
+  </tr></thead><tbody id="medication-rows" data-i18n-ignore="true"></tbody></table></div>
+</article>
+
+<article class="portal-card full">
+  <h2 data-en="Recent meals" data-zh="最近的飲食">Recent meals</h2>
+  <div class="table-scroll"><table class="record-table"><thead><tr>
+    <th data-en="When" data-zh="時間">When</th>
+    <th data-en="Meal" data-zh="餐別">Meal</th>
+    <th data-en="What was eaten" data-zh="吃了什麼">What was eaten</th>
+  </tr></thead><tbody id="meal-rows" data-i18n-ignore="true"></tbody></table></div>
+</article>
+
+<article class="portal-card full">
+  <h2 data-en="Past check-ins" data-zh="之前的回報">Past check-ins</h2>
+  <p class="field-hint" data-en="What you said that day, and the step suggested at the time — as it was, not recalculated." data-zh="那天你說了什麼、當時給你的下一步——照當時的樣子留著，不會用現在的資料重算。">What you said that day, and the step suggested at the time — as it was, not recalculated.</p>
+  <div class="table-scroll"><table class="record-table"><thead><tr>
+    <th data-en="When" data-zh="時間">When</th>
+    <th data-en="Energy" data-zh="精神">Energy</th>
+    <th data-en="Routine" data-zh="作息">Routine</th>
+    <th data-en="The step at the time" data-zh="當時的下一步">The step at the time</th>
+  </tr></thead><tbody id="checkin-rows" data-i18n-ignore="true"></tbody></table></div>
+</article>
+
+<article class="portal-card full reference-card">
+  <h2 data-en="What the published ranges say" data-zh="公開資料的區間怎麼說">What the published ranges say</h2>
+  <p id="reference-disclaimer" class="field-hint"></p>
+  <div id="reference-body" class="reference-list" data-i18n-ignore="true"></div>
+  <p id="reference-attribution" class="reference-attribution"></p>
+</article>
+
+
+</main></div><script src="/i18n.js?v=20260731a" defer></script><script src="/ui.js?v=20260727a" defer></script><script src="/records.js?v=20260727a" defer></script><script src="/trends.js?v=20260731a" defer></script></body></html>

@@ -1,0 +1,27 @@
+{
+  "personas": [
+    {
+      "name": "public",
+      "routes": ["/", "/demo", "/about", "/how-it-works"]
+    },
+    {
+      "name": "participant",
+      "enter": "/demo/enter?persona=alex",
+      "routes": ["/app", "/app/check-in", "/app/records", "/app/summary", "/app/support", "/app/privacy"]
+    },
+    {
+      "name": "supporter",
+      "enter": "/demo/enter?persona=jordan",
+      "routes": ["/supporter", "/supporter/queue", "/supporter/follow-up", "/supporter/method", "/supporter/connections"]
+    }
+  ],
+  "viewports": [
+    { "name": "phone", "width": 390, "height": 844, "mobile": true },
+    { "name": "desktop", "width": 1280, "height": 900 }
+  ],
+  "language": {
+    "toggle": "[data-language-toggle], .language-toggle, button:has-text('中文'), button:has-text('English')",
+    "expect": "zh-TW",
+    "staysEnglish": ["DailyAble", "Alex", "Jordan", "English", "mmHg", "bpm", "mg/dL"]
+  }
+}

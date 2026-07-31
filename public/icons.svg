@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="icon-tap" viewBox="0 0 24 24"><path d="M9 11V5a2 2 0 0 1 4 0v5-2a2 2 0 0 1 4 0v3-1a2 2 0 0 1 4 0v5c0 4-3 7-7 7h-1c-3 0-5-2-7-5l-2-3a2 2 0 0 1 3-2l2 2"/></symbol>
+<symbol id="icon-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+<symbol id="icon-choice" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/><circle cx="12" cy="12" r="10"/></symbol>
+<symbol id="icon-alert" viewBox="0 0 24 24"><path d="M12 3 2 21h20L12 3Z"/><path d="M12 9v5m0 3h.01"/></symbol>
+<symbol id="icon-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+<symbol id="icon-routine" viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h7"/><path d="m17 16 2 2 4-5"/></symbol>
+<symbol id="icon-person" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-5 4-7 8-7s7 2 8 7"/></symbol>
+<symbol id="icon-plan" viewBox="0 0 24 24"><path d="M6 3h12v18H6z"/><path d="M9 8h6M9 12h6M9 16h4"/></symbol>
+<symbol id="icon-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 13v7H4V6h7"/></symbol>
+<symbol id="icon-message" viewBox="0 0 24 24"><path d="M4 4h16v13H9l-5 4V4Z"/><path d="M8 9h8M8 13h5"/></symbol>
+<symbol id="icon-shield" viewBox="0 0 24 24"><path d="M12 2 20 5v6c0 5-3 9-8 11-5-2-8-6-8-11V5l8-3Z"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="icon-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+
+<!-- 2026-07-28 導覽用的一組。八個頁面各一個，同一格線（24）、同一筆畫（1.8，由 CSS 給）、
+     圓角一律 2、端點圓頭。刻意畫得簡單：導覽的圖示是給人掃視用的，細節多了反而慢。
+     每個圖示旁邊永遠有文字，圖示本身 aria-hidden，不拿它當唯一的說明。 -->
+<symbol id="icon-home" viewBox="0 0 24 24"><path d="M4 11.2 12 4l8 7.2"/><path d="M6 10.5V19a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-8.5"/><path d="M10 20v-5h4v5"/></symbol>
+<symbol id="icon-checkin" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="m8.5 12.5 2.5 2.5 5-5.5"/></symbol>
+<symbol id="icon-body" viewBox="0 0 24 24"><path d="M12 20s-7-4.3-7-9.5A4.5 4.5 0 0 1 12 7.5a4.5 4.5 0 0 1 7 3c0 5.2-7 9.5-7 9.5Z"/><path d="M6.5 13h2.2l1.3-2.2 1.8 4 1.4-2.6h3.3"/></symbol>
+<symbol id="icon-summary" viewBox="0 0 24 24"><path d="M14 3H7a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7l-4-4Z"/><path d="M14 3v4h4"/><path d="M9.5 12h5M9.5 16h3"/></symbol>
+<symbol id="icon-trend" viewBox="0 0 24 24"><path d="M4 19V5"/><path d="M4 19h16"/><path d="m7.5 15 3.5-4 2.5 2.2L19 8"/><circle cx="19" cy="8" r="1.6"/></symbol>
+<symbol id="icon-support" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20c.7-3.6 2.8-5.2 5.5-5.2 1.4 0 2.6.4 3.6 1.2"/><path d="M15.5 20.5c2.5-1.4 4-3.2 4-5a2.2 2.2 0 0 0-4-1.3 2.2 2.2 0 0 0-4 1.3c0 1.8 1.5 3.6 4 5Z"/></symbol>
+<symbol id="icon-permission" viewBox="0 0 24 24"><path d="M12 3.2 19 6v5.4c0 4.4-2.8 7.9-7 9.4-4.2-1.5-7-5-7-9.4V6l7-2.8Z"/><circle cx="12" cy="11" r="1.9"/><path d="M12 12.9V15.5"/></symbol>
+<symbol id="icon-connections" viewBox="0 0 24 24"><circle cx="6.5" cy="7" r="2.6"/><circle cx="17.5" cy="17" r="2.6"/><path d="M8.9 8.6 15.1 15.4"/><path d="M17.5 9.6V7a2.6 2.6 0 0 0-2.6-2.6"/><path d="M6.5 14.4V17a2.6 2.6 0 0 0 2.6 2.6"/></symbol>
+<symbol id="icon-queue" viewBox="0 0 24 24"><path d="M4 6.5h9M4 12h9M4 17.5h6"/><circle cx="18.5" cy="6.5" r="1.6"/><circle cx="18.5" cy="12" r="1.6"/><circle cx="16" cy="17.5" r="1.6"/></symbol>
+<symbol id="icon-method" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.2"/><path d="M12 8.4v3.6l2.6 1.8"/><path d="M12 3.8v1.6M12 18.6v1.6M3.8 12h1.6M18.6 12h1.6"/></symbol>
+</defs></svg>

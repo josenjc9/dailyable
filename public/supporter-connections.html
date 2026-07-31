@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Participant invitations · DailyAble</title>
+  <link rel="stylesheet" href="/styles.css?v=20260726o">
+  <link rel="stylesheet" href="/portal.css?v=20260730b">
+<link rel="stylesheet" href="/v3.css?v=20260731f"></head>
+<body class="portal-shell" data-role-shell="supporter" data-connection-role="supporter">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="portal-header">
+    <a class="brand" href="/"><img src="/brand-mark.svg" alt="" width="36" height="36"><span>DailyAble</span></a>
+    <span class="demo-chip" data-en="PARTICIPANT-LED" data-zh="由本人發起">PARTICIPANT-LED</span>
+  </header>
+  <div class="role-layout">
+    <aside class="ops-rail">
+      <div><p class="role-label">SUPPORTER</p><strong>Support workspace</strong><small data-en="Join only by invitation" data-zh="僅能透過本人邀請加入">Join only by invitation</small></div>
+      <nav aria-label="Supporter navigation">
+        <a href="/supporter"><span data-en="Overview" data-zh="總覽">Overview</span></a>
+        <a href="/supporter/queue"><span data-en="Follow-up queue" data-zh="待跟進佇列">Follow-up queue</span></a>
+        <a href="/supporter/follow-up"><span data-en="Follow-up record" data-zh="追蹤紀錄">Follow-up record</span></a>
+        <a href="/supporter/method"><span data-en="Decision method" data-zh="判斷方法">Decision method</span></a>
+        <a href="/supporter/connections" class="active" aria-current="page"><span data-en="Invitations" data-zh="邀請與連結">Invitations</span></a>
+      </nav>
+      <a class="role-switch" data-role-switch href="/session?next=/app"><span data-en="Switch to participant view" data-zh="切換到參與者前台">Switch to participant view</span><b>↗</b></a>
+    </aside>
+    <main id="main" class="supporter-main connection-main">
+      <div class="page-heading"><div>
+        <p class="page-kicker" data-en="JOIN WITH PERMISSION" data-zh="取得同意後加入">JOIN WITH PERMISSION</p>
+        <h1 data-en="Support begins with an invitation." data-zh="支持，從本人邀請開始。">Support begins with an invitation.</h1>
+        <p data-en="Enter the code the participant shared with you. Your request stays pending until they confirm it." data-zh="輸入參與者提供的邀請碼。必須等本人確認後，連結才會生效。">Enter the code the participant shared with you. Your request stays pending until they confirm it.</p>
+      </div></div>
+
+      <div class="connection-grid supporter-connection-grid">
+        <section class="portal-card claim-panel" aria-labelledby="claim-title">
+          <p class="page-kicker" data-en="INVITATION CODE" data-zh="邀請碼">INVITATION CODE</p>
+          <h2 id="claim-title" data-en="Request a connection" data-zh="提出連結要求">Request a connection</h2>
+          <p data-en="Use the code only for the person who handed it to you. DailyAble does not provide a people directory." data-zh="邀請碼只能用於親自交給你的那位使用者；DailyAble 不提供姓名搜尋名冊。">Use the code only for the person who handed it to you. DailyAble does not provide a people directory.</p>
+          <form id="claim-form">
+            <label for="invite-code" data-en="Eight-character invitation code" data-zh="八位邀請碼">Eight-character invitation code</label>
+            <input id="invite-code" name="code" required minlength="8" maxlength="8" autocomplete="one-time-code" autocapitalize="characters" spellcheck="false" inputmode="text">
+            <button class="button primary" data-en="Send connection request" data-zh="送出連結要求">Send connection request</button>
+          </form>
+          <p class="consent-note" data-en="A code does not give access by itself. The participant must still confirm your request." data-zh="拿到邀請碼不代表已取得權限；仍然要由本人確認。">A code does not give access by itself. The participant must still confirm your request.</p>
+        </section>
+        <section aria-labelledby="connections-title">
+          <p class="page-kicker" data-en="MY CONNECTIONS" data-zh="我的連結">MY CONNECTIONS</p>
+          <h2 id="connections-title" data-en="Participants who chose to connect" data-zh="選擇與你連結的參與者">Participants who chose to connect</h2>
+          <div id="connection-output" class="connection-list" aria-live="polite" aria-busy="true"><p class="empty-state" data-en="Loading connections…" data-zh="正在載入連結…">Loading connections…</p></div>
+        </section>
+      </div>
+    </main>
+  </div>
+  <script src="/i18n.js?v=20260731a" defer></script>
+  <script src="/connections.js?v=20260726o" defer></script>
+  <script src="/ui.js?v=20260726o" defer></script>
+</body>
+</html>

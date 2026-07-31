@@ -1,0 +1,320 @@
+body.public-site{margin:0;background:var(--canvas);color:var(--ink-strong);font-size:17px;line-height:1.65;overflow-x:hidden}.public-site .site-header{position:sticky;top:0;z-index:30;min-height:72px;max-width:none;padding:14px max(24px,calc((100vw - 1320px)/2));background:rgba(247,243,236,.9);border-bottom:1px solid var(--hairline);backdrop-filter:blur(18px)}.public-site .site-header nav{display:flex;gap:24px}.public-site .site-header nav a{color:var(--ink-soft);text-decoration:none;font-size:.82rem;letter-spacing:.04em}.public-site .site-header nav a.active,.public-site .site-header nav a:hover{color:var(--ink-strong)}.public-kicker{margin:0;color:var(--coral-deep);font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}.home-opening{position:relative;min-height:calc(100vh - 72px);min-height:calc(100svh - 72px);padding:34px max(24px,calc((100vw - 1320px)/2)) 48px;display:grid;grid-template-rows:auto 1fr auto;overflow:hidden;background:linear-gradient(118deg,#f7f3ec 0 68%,#e2e8df 68%)}.opening-meta{display:flex;justify-content:space-between;gap:20px;color:#65706c;font-size:.68rem;font-weight:750;letter-spacing:.12em}.opening-statement{position:relative;z-index:2;align-self:center;width:min(1060px,87%);padding:40px 0}.opening-statement h1{margin:22px 0 0;max-width:980px;font:500 clamp(3.8rem,8.1vw,8.5rem)/.9 Georgia,"Times New Roman",serif;letter-spacing:-.065em}.opening-lower{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,610px) auto;justify-content:space-between;align-items:end;gap:30px}.opening-lower .lead{margin:0;color:var(--ink-soft);font-size:clamp(1rem,1.45vw,1.25rem)}.public-site .button.public-primary{min-width:190px;background:var(--ink-strong);border-color:var(--ink-strong);color:#fff}.public-site .button.public-primary:hover{background:var(--coral-deep);border-color:var(--coral-deep)}.signal-field{position:absolute;right:3vw;top:17%;width:32vw;min-width:380px;aspect-ratio:1}.signal-field i{position:absolute;inset:10%;border:1px solid rgba(23,32,31,.18);border-radius:50%}.signal-field i:nth-child(2){inset:26%;border-style:dashed}.signal-field i:nth-child(3){inset:41%;background:var(--coral);border:0}.signal-field span{position:absolute;inset:0;background:linear-gradient(90deg,transparent 49.8%,rgba(23,32,31,.16) 50%,transparent 50.2%),linear-gradient(transparent 49.8%,rgba(23,32,31,.16) 50%,transparent 50.2%)}
+.consent-thread{padding:clamp(80px,10vw,150px) max(24px,calc((100vw - 1180px)/2));display:grid;grid-template-columns:.72fr 1.28fr;gap:clamp(60px,10vw,150px);background:#202927;color:#f7f3ec}.thread-intro{position:sticky;top:120px;align-self:start}.thread-intro h2{margin:22px 0 0;font:500 clamp(2.7rem,5vw,5rem)/1 Georgia,serif;letter-spacing:-.045em}.thread-steps{margin:0;padding:0;list-style:none}.thread-steps li{display:grid;grid-template-columns:60px 1fr;gap:22px;padding:42px 0;border-top:1px solid #56615d}.thread-steps li:last-child{border-bottom:1px solid #56615d}.thread-steps>li>span{color:#dba18f;font-size:.75rem;letter-spacing:.12em}.thread-steps strong{font:500 clamp(2rem,3.3vw,3.3rem)/1.1 Georgia,serif}.thread-steps p{max-width:540px;margin:12px 0 0;color:#bfc9c4}.two-worlds{padding:clamp(80px,10vw,150px) max(24px,calc((100vw - 1240px)/2));background:#eee8de}.two-worlds>header{display:grid;grid-template-columns:1fr 1.2fr;gap:50px;margin-bottom:70px}.two-worlds>header h2{margin:0;font:500 clamp(2.6rem,5.1vw,5.2rem)/.98 Georgia,serif;letter-spacing:-.05em}.world{display:grid;grid-template-columns:90px 1.15fr .65fr;gap:42px;align-items:start;padding:54px 0;border-top:1px solid #a9aaa2}.world-index{font:italic 3.8rem Georgia,serif;color:var(--coral-deep)}.world-label{margin:0 0 12px;font-size:.7rem;font-weight:800;letter-spacing:.15em}.world h3{margin:0;font:500 clamp(2.2rem,4vw,4.2rem)/1 Georgia,serif}.world div>p:last-child{max-width:620px;color:var(--ink-soft)}.world ul{list-style:none;margin:0;padding:0}.world li{padding:12px 0;border-bottom:1px solid #c8c3b9;font-weight:700}.supporter-world{background:#28332f;color:#f7f3ec;margin:0;padding:54px 5vw;border:0}.supporter-world div>p:last-child{color:#bdc7c2}.supporter-world li{border-color:#52605a}.evidence-band{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;padding:clamp(80px,10vw,140px) max(24px,calc((100vw - 1180px)/2));background:#c96f5b;color:#1e2523}.evidence-band h2{margin:20px 0 0;font:500 clamp(2.5rem,4.5vw,4.8rem)/1 Georgia,serif}.evidence-band blockquote{margin:0}.evidence-band blockquote strong{display:block;font:500 clamp(5rem,10vw,9rem)/.8 Georgia,serif}.evidence-band blockquote p{max-width:650px;font-size:1.1rem}.evidence-links{grid-column:2;display:flex;gap:30px}.evidence-links a{font-weight:800;text-underline-offset:5px}.public-footer{max-width:none;margin:0;padding:34px max(24px,calc((100vw - 1320px)/2));display:flex;justify-content:space-between;background:#17201f;color:#c7d0cc;border:0}
+/* Public secondary pages retain readable editorial primitives */.public-page-hero,.public-site .page-hero{max-width:none;margin:0;padding:clamp(80px,10vw,130px) max(24px,calc((100vw - 1180px)/2));background:#202927;color:#f7f3ec}.public-page-hero h1,.public-site .page-hero h1{max-width:1050px;margin:12px 0;font:500 clamp(3rem,7vw,7rem)/.95 Georgia,serif;letter-spacing:-.055em;color:#f7f3ec}.public-page-hero .lead,.public-site .page-hero .lead{max-width:760px;color:#c2ccc7;font-size:1.15rem}.public-section,.public-site main>.section{max-width:none;padding:clamp(70px,8vw,110px) max(24px,calc((100vw - 1180px)/2));color:var(--ink-strong)}.public-section-inner{max-width:1180px;margin:auto}.public-section-heading,.two-column{display:grid;grid-template-columns:1fr 1fr;gap:60px}.public-section-heading h2,.section h2{margin:0;font:500 clamp(2.5rem,5vw,5rem)/1 Georgia,serif}.journey-grid,.role-story-grid,.evidence-grid,.metric-grid,.locale-grid,.boundary-grid,.data-cards,.source-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:50px}.role-story-grid,.evidence-grid{grid-template-columns:1fr 1fr}.journey-card,.role-story,.evidence-card,.metric-card,.locale-card,.boundary-grid article,.data-cards article,.source-grid article{padding:28px;border-top:1px solid var(--hairline);background:transparent}.journey-card h3,.role-story h3{font-size:1.5rem}.journey-card p,.role-story p,.public-section p,.section p{color:var(--ink-soft)}.public-site .decision-evidence article{background:#17201f;border-color:#34413d;color:#f7f3ec}.public-site .decision-evidence article span{color:#dfa08d}.public-site .decision-evidence article h3{color:#f7f3ec}.public-site .decision-evidence article p{color:#c7d0cc}.public-site .support-patterns .table-head{background:#17201f;color:#f7f3ec}.public-site .support-patterns .table-head [role="columnheader"]{color:#f7f3ec}
+@media(max-width:900px){.home-opening{background:linear-gradient(150deg,#f7f3ec 0 76%,#e2e8df 76%)}.opening-statement{width:100%}.signal-field{opacity:.45;right:-150px;top:25%}.consent-thread,.evidence-band,.two-worlds>header,.public-section-heading,.two-column{grid-template-columns:1fr}.thread-intro{position:static}.world{grid-template-columns:60px 1fr}.world ul{grid-column:2}.evidence-links{grid-column:1}.journey-grid,.metric-grid,.locale-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.public-site .site-header{padding:12px 18px;display:grid;grid-template-columns:1fr auto;gap:10px 14px}.public-site .site-header .brand{grid-column:1;grid-row:1}.public-site .site-header .language-toggle{grid-column:2;grid-row:1}.public-site .site-header nav{grid-column:1/-1;grid-row:2;gap:14px;overflow-x:auto;max-width:100%;padding-bottom:2px}.opening-meta span:nth-child(2){display:none}.home-opening{padding:24px 20px 38px;min-height:720px}.opening-statement h1{font-size:clamp(3.15rem,15vw,5rem);line-height:.92}.opening-lower{grid-template-columns:1fr;align-items:start}.opening-lower .button{width:100%}.signal-field{min-width:300px;right:-145px;top:42%}.consent-thread,.two-worlds,.evidence-band{padding:76px 20px}.thread-steps li{grid-template-columns:42px 1fr}.world{grid-template-columns:1fr;gap:18px}.world ul{grid-column:1}.supporter-world{margin:0;padding:46px 20px}.evidence-links{display:grid;gap:12px}.public-footer{padding:30px 20px;display:grid;gap:8px}.role-story-grid,.evidence-grid,.journey-grid,.metric-grid,.locale-grid,.boundary-grid,.data-cards,.source-grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.signal-field{display:none}}
+
+/* Reviewer demo entry: one screen that says what this is, then four ways in.
+   Sized so the whole thing is reachable on a phone without hunting. */
+.demo-entry{max-width:960px;margin:0 auto;padding:38px 20px 72px;display:grid;gap:40px}
+.demo-intro{display:grid;gap:14px;padding-bottom:30px;border-bottom:1px solid var(--hairline)}
+.demo-intro h1{margin:0;font:500 clamp(2.1rem,5.4vw,3.4rem)/1.06 Georgia,"Times New Roman",serif;letter-spacing:-.04em;text-wrap:balance}
+.demo-intro .lead{margin:0;max-width:60ch;color:var(--ink-soft)}
+.demo-facts{margin:6px 0 0;padding:0;list-style:none;display:grid;gap:7px}
+.demo-facts li{position:relative;padding-left:20px;color:var(--ink-soft);font-size:.92rem}
+.demo-facts li::before{content:"";position:absolute;left:0;top:.55em;width:8px;height:8px;border-radius:50%;background:var(--coral)}
+.demo-story{display:grid;gap:22px;padding:28px;background:linear-gradient(135deg,#fffaf4 0%,#eef4f0 100%);border:1px solid var(--hairline);border-radius:var(--radius)}
+.demo-story-heading{display:grid;gap:9px;max-width:68ch}
+.demo-story-heading h2{margin:0;font:500 clamp(1.55rem,3.5vw,2.15rem)/1.16 Georgia,"Times New Roman",serif;letter-spacing:-.025em;text-wrap:balance}
+.demo-story-heading>p:last-child{margin:0;color:var(--ink-soft)}
+.reviewer-flow{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.reviewer-flow li{display:grid;grid-template-columns:34px 1fr;gap:11px;align-items:start;padding:15px;background:rgba(255,255,255,.72);border:1px solid rgba(23,32,31,.12);border-radius:var(--radius-sm)}
+.reviewer-flow li>span{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--ink-strong);color:#fff;font-weight:800}
+.reviewer-flow li div{display:grid;gap:5px}
+.reviewer-flow strong{line-height:1.35}
+.reviewer-flow p{margin:0;color:var(--ink-soft);font-size:.86rem;line-height:1.48}
+.demo-pick{display:grid;gap:12px}
+.demo-pick h2{margin:0;font:500 1.3rem/1.25 Georgia,serif}
+.demo-pick>p{margin:0;max-width:62ch;color:var(--ink-soft);font-size:.95rem}
+.demo-people{display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));gap:12px;margin-top:6px}
+.demo-person{display:grid;gap:6px;align-content:start;min-height:132px;padding:18px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--radius-sm);color:var(--ink-strong);text-decoration:none;transition:border-color .18s var(--ease-out),transform .18s var(--ease-out)}
+.demo-person:hover,.demo-person:focus-visible{border-color:var(--coral);transform:translateY(-2px)}
+.demo-person:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.demo-person strong{font-size:1.05rem}
+.demo-person span{color:var(--ink-soft);font-size:.88rem;line-height:1.5}
+.demo-person em{margin-top:auto;color:var(--coral-deep);font-style:normal;font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.demo-reset{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;padding-top:26px;border-top:1px solid var(--hairline)}
+.demo-reset p{margin:0;max-width:52ch;color:var(--ink-soft);font-size:.92rem}
+@media(max-width:520px){
+  .demo-entry{padding:26px 16px 56px;gap:32px}
+  .demo-story{padding:20px}
+  .reviewer-flow{grid-template-columns:1fr}
+  .demo-people{grid-template-columns:1fr}
+  .demo-person{min-height:0}
+  .demo-reset .button{width:100%}
+}
+
+/* --- 2026-07-27 public-site corrections --- */
+
+/* Same tracking problem on the public pages and the session screen: Chinese display type
+   must not inherit the Latin negative letter-spacing, and it needs room to breathe. */
+html[lang^="zh"] .opening-statement h1,
+html[lang^="zh"] .session-lead h1,
+html[lang^="zh"] .demo-intro h1,
+html[lang^="zh"] .public-section h2{letter-spacing:normal}
+html[lang^="zh"] .opening-statement h1,
+html[lang^="zh"] .session-lead h1{line-height:1.16}
+html[lang^="zh"] .session-lead h1{font-size:clamp(2.6rem,5.4vw,4.6rem)}
+
+/* On a very wide display the opening headline stopped at 980px and left the right half
+   empty. Give it the room, and keep the lines even. */
+.opening-statement{width:min(1320px,92%)}
+.opening-statement h1{max-width:min(100%,1240px);text-wrap:balance}
+
+/* ============================================================================
+   2026-07-28 版式系統
+   ----------------------------------------------------------------------------
+   問題不在沒設計，在沒有節奏：每一段的上下留白、字級階梯、左邊對齊線都是各寫各的，
+   所以整站讀起來像好幾塊拼起來的，而不是同一個網站。這裡把三件事收成一套變數——
+   欄距、段落節奏、字級階梯——之後每個區塊都照它長。
+
+   中文的部分另外處理：中文沒有詞距，行高與字距的需求跟英文不同，行長也要用「一行幾個
+   字」來想，不是用 ch。行長超過 34 字左右，眼睛回到下一行的起點就會找不到。
+   ========================================================================== */
+/* 這些變數已經搬到 styles.css，因為前台後台都要用，而後台不載這支。
+   同一個產品用同一組節奏，切過去才不會像兩個網站拼起來的。 */
+
+/* 每個區塊同一組左右邊界與上下呼吸，對齊線才會是一條 */
+.public-site main>.section,
+.public-section{padding:var(--section-y) var(--gutter)}
+.public-section-inner{max-width:1240px}
+
+/* 字級階梯：大標、區塊標、卡片標各一階，中間不再各自發明尺寸 */
+.public-site .page-hero h1,
+.public-page-hero h1{font-size:var(--display-1)}
+.public-section-heading h2,
+.public-site .section h2,
+.section-heading h2,
+.two-worlds>header h2,
+.evidence-band h2,
+.thread-intro h2{font-size:var(--display-2);line-height:1.06}
+.public-site h3,
+.journey-card h3,
+.role-story h3{font-size:var(--display-3);line-height:1.25}
+
+/* 中文顯示字：行高放鬆、不要繼承拉丁字的負字距（中文負字距會擠成一團），
+   並限制每行字數。斷詞由 ui.js 的禁則處理負責，這裡只管量。 */
+html[lang^="zh"] .public-site :is(h1,h2,h3),
+html[lang^="zh"] .public-site .metric{letter-spacing:normal;line-height:1.2}
+html[lang^="zh"] .public-site :is(h1,h2){text-wrap:balance}
+html[lang^="zh"] .public-site .page-hero h1,
+html[lang^="zh"] .public-page-hero h1,
+html[lang^="zh"] .public-section-heading h2,
+html[lang^="zh"] .public-site .section h2{max-width:17em}
+.public-site p{text-wrap:pretty}
+.public-site .lead,
+.public-site .public-section>p,
+.public-site .section>p,
+.public-section-heading p,
+.section-heading>p:last-child{max-width:var(--measure)}
+.public-site .caption{max-width:var(--measure);color:var(--ink-soft);font-size:.9rem}
+
+/* 區塊標題組：小標 → 大標 → 說明，三者間距固定，不再每頁一個樣 */
+.public-section-heading,.two-column{gap:var(--stack-lg)}
+.public-section-heading h2,.section-heading h2{margin-block:var(--stack-sm) var(--stack-md)}
+.public-kicker,.public-section-label,.eyebrow{margin-bottom:var(--stack-sm)}
+
+/* ---- 四步流程：原本是三欄，第四步自己掉到第二排，節奏斷掉 ---- */
+.flow-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:var(--stack-lg);background:var(--hairline);border:1px solid var(--hairline)}
+.flow-grid article{display:grid;align-content:start;gap:var(--stack-sm);padding:clamp(22px,2.4vw,34px);background:var(--canvas)}
+.flow-grid span{color:var(--coral-deep);font-size:.72rem;font-weight:800;letter-spacing:.14em}
+.public-site .flow-grid h2{margin:0;font-size:var(--display-3);line-height:1.2;max-width:none}
+.flow-grid p{margin:0;color:var(--ink-soft);font-size:.95rem}
+
+/* ---- 卡片群：統一內距、統一頂線、等高 ----
+   一律關在 .public-site 底下。這些 class 名稱（data-cards、metric-grid、source-grid）
+   後台也在用，第一版沒有限定範圍，結果支持者總覽的卡片被壓成一個字一行的窄條。 */
+/* 欄數跟著卡片數走，不寫死三欄。
+   寫死三欄的話，四張卡會排成 3＋1，第二排右邊空兩格——Boss 2026-07-29 指出的那塊
+   空白就是這樣來的。跟先前四步流程 3＋1 的毛病同一種。
+   auto-fit 讓最後一排自己補滿，卡片數改變也不用回來改 CSS。 */
+.public-site .journey-grid,.public-site .role-story-grid,.public-site .evidence-grid,.public-site .metric-grid,.public-site .locale-grid,.public-site .boundary-grid,.public-site .data-cards,.public-site .source-grid{grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:1px;margin-top:var(--stack-lg);background:var(--hairline);border-top:1px solid var(--hairline)}
+.public-site .journey-card,.public-site .role-story,.public-site .evidence-card,.public-site .metric-card,.public-site .locale-card,.public-site .boundary-grid article,.public-site .data-cards article,.public-site .source-grid article{display:grid;align-content:start;gap:var(--stack-sm);padding:clamp(22px,2.2vw,32px);border-top:0;background:var(--canvas)}
+.public-site .metric-card .big-number{font:500 clamp(2.4rem,3.6vw,3.4rem)/1 Georgia,serif;color:var(--coral-deep)}
+
+/* ---- 責任分工：三欄表在手機上是不能讀的。桌機保持表格對齊，
+       窄螢幕改成一張一張的卡，欄位名用 ::before 帶進來。 ---- */
+.public-site .responsibility-table{margin-top:var(--stack-lg);border:1px solid var(--hairline)}
+.public-site .responsibility-table [role="row"]{display:grid;grid-template-columns:minmax(140px,.8fr) 1.4fr 1.2fr;gap:clamp(16px,2vw,32px);padding:clamp(16px,1.8vw,24px) clamp(16px,2vw,28px);border-top:1px solid var(--hairline)}
+.responsibility-table [role="row"]:first-child{border-top:0}
+.responsibility-table .table-head{background:var(--ink-strong);color:var(--canvas)}
+.responsibility-table [role="columnheader"]{font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.responsibility-table [role="cell"]{color:var(--ink-soft);font-size:.98rem}
+.responsibility-table strong[role="cell"]{color:var(--ink-strong);font-size:1.05rem}
+
+/* ---- 功能支持模式：四欄的寬表格 ----
+   桌機保持表格對齊（四欄本來就是要橫著比對的），窄螢幕改成一張一張的卡。
+   四欄擠在手機上不是「小一點的表格」，是讀不了的東西。 */
+.public-site .support-patterns{margin-top:var(--stack-lg);border:1px solid var(--hairline)}
+.public-site .support-patterns [role="row"]{display:grid;grid-template-columns:1.1fr 1fr 1.2fr 1.1fr;gap:clamp(14px,1.6vw,26px);padding:clamp(14px,1.6vw,20px) clamp(16px,2vw,26px);border-top:1px solid var(--hairline)}
+.public-site .support-patterns [role="row"]:first-child{border-top:0}
+.public-site .support-patterns [role="columnheader"]{font-size:.7rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase}
+.public-site .support-patterns [role="cell"]{color:var(--ink-soft);font-size:.94rem;line-height:1.55}
+.public-site .support-patterns strong[role="cell"]{color:var(--ink-strong)}
+
+@media(max-width:1080px){
+  .flow-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:940px){
+  .public-site .support-patterns [role="row"]{grid-template-columns:1fr;gap:10px}
+  .public-site .support-patterns .table-head{display:none}
+  .public-site .support-patterns [role="row"]{padding-block:20px}
+  /* 欄名跟著每一格走，不然四段疊起來分不出哪句在講什麼 */
+  .public-site .support-patterns [role="row"]>[role="cell"]:nth-child(2)::before,
+  .public-site .support-patterns [role="row"]>[role="cell"]:nth-child(3)::before,
+  .public-site .support-patterns [role="row"]>[role="cell"]:nth-child(4)::before{display:block;margin-bottom:3px;color:var(--coral-deep);font-size:.66rem;font-weight:800;letter-spacing:.11em}
+  html[lang="en"] .support-patterns [role="row"]>[role="cell"]:nth-child(2)::before{content:"FUNCTION TO CHECK"}
+  html[lang="en"] .support-patterns [role="row"]>[role="cell"]:nth-child(3)::before{content:"LOW-RISK SUPPORT TRIAL"}
+  html[lang="en"] .support-patterns [role="row"]>[role="cell"]:nth-child(4)::before{content:"EVIDENCE OF BENEFIT"}
+  html[lang^="zh"] .support-patterns [role="row"]>[role="cell"]:nth-child(2)::before{content:"需要確認的功能"}
+  html[lang^="zh"] .support-patterns [role="row"]>[role="cell"]:nth-child(3)::before{content:"低風險支持嘗試"}
+  html[lang^="zh"] .support-patterns [role="row"]>[role="cell"]:nth-child(4)::before{content:"怎麼看出有幫助"}
+}
+@media(max-width:820px){
+  .responsibility-table [role="row"]{grid-template-columns:1fr;gap:6px}
+  .responsibility-table .table-head{display:none}
+  /* 欄位名在窄螢幕跟著每個欄位走，不然三欄疊起來就分不出哪句是「可以做」、哪句是「不能做」 */
+  .responsibility-table [role="row"]>[role="cell"]:nth-child(2)::before,
+  .responsibility-table [role="row"]>[role="cell"]:nth-child(3)::before{display:block;margin-bottom:2px;color:var(--coral-deep);font-size:.68rem;font-weight:800;letter-spacing:.12em}
+  html[lang="en"] .responsibility-table [role="row"]>[role="cell"]:nth-child(2)::before{content:"MAY DO"}
+  html[lang="en"] .responsibility-table [role="row"]>[role="cell"]:nth-child(3)::before{content:"MUST NOT DO"}
+  html[lang^="zh"] .responsibility-table [role="row"]>[role="cell"]:nth-child(2)::before{content:"可以做"}
+  html[lang^="zh"] .responsibility-table [role="row"]>[role="cell"]:nth-child(3)::before{content:"不能做"}
+}
+@media(max-width:620px){
+  .flow-grid{grid-template-columns:1fr}
+  /* 手機上原本的字級一行只放得下三到四個中文字，大標被切成五段碎行。
+     中文字寬是英文的兩倍，同一個 vw 值不能兩種語言共用。 */
+  html[lang^="zh"] .opening-statement h1{font-size:clamp(2.5rem,11.2vw,3.6rem);line-height:1.22}
+  html[lang^="zh"] .public-site .page-hero h1,
+  html[lang^="zh"] .public-page-hero h1{font-size:clamp(2.2rem,9.6vw,3.2rem)}
+  html[lang^="zh"] .public-section-heading h2,
+  html[lang^="zh"] .public-site .section h2,
+  html[lang^="zh"] .two-worlds>header h2,
+  html[lang^="zh"] .evidence-band h2,
+  html[lang^="zh"] .thread-intro h2{font-size:clamp(1.9rem,8.4vw,2.8rem)}
+}
+
+
+/* ============================================================================
+   2026-07-28 首頁的服務流程圖（取代原本那組空心圓）
+   ----------------------------------------------------------------------------
+   原本右邊是三個同心圓加一組十字線，好看但什麼都沒說。改成四個節點連成一條路徑：
+   你回報 → 看懂變化 → 你自己選 → 有人跟進。這樣那張圖本身就在講產品在幹嘛，
+   而不是裝飾。技法參考知識庫 開發/codepen 那兩份案例，用我們自己的結構重寫。
+
+   節點是真的文字（不是圖片也不是 aria-hidden），所以讀螢幕的人聽得到這四步；
+   只有連線那層 SVG 對輔助技術隱藏，因為線本身沒有資訊。
+   動態全部關在 prefers-reduced-motion: no-preference 裡，系統要求減少動態就完全靜止。
+   ========================================================================== */
+.flow-map{position:absolute;right:2.5vw;top:14%;width:min(36vw,470px);aspect-ratio:420/460;z-index:1;perspective:1400px}
+.flow-map-lines{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.flow-map-lines path{fill:none;stroke:rgba(23,32,31,.32);stroke-width:1.6;stroke-linecap:round;stroke-dasharray:5 5}
+.flow-map-nodes{position:absolute;inset:0;margin:0;padding:0;list-style:none;transform-style:preserve-3d;transform:rotateX(calc(var(--tilt-x,0)*1deg)) rotateY(calc(var(--tilt-y,0)*1deg));transition:transform .5s var(--ease-out)}
+.flow-node{position:absolute;width:clamp(132px,13vw,168px);display:grid;gap:3px;padding:13px 15px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--radius-sm);box-shadow:0 12px 30px rgba(29,37,34,.09);transform:translate(-50%,-50%)}
+.flow-node .icon{width:20px;height:20px;fill:none;stroke:var(--coral-deep);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.flow-node strong{font-size:.95rem;line-height:1.3}
+.flow-node small{color:var(--ink-soft);font-size:.76rem;line-height:1.45}
+/* 四個節點沿著一條往下走的路徑排開。左右錯落是刻意的——四個對齊一排會變成清單，
+   錯開才讀得出「一步接一步」。間距要夠，卡片之間不能互相壓到。 */
+.flow-node-1{left:30%;top:12%}
+.flow-node-2{left:66%;top:36%}
+.flow-node-3{left:28%;top:62%}
+.flow-node-4{left:64%;top:86%}
+@media(prefers-reduced-motion:no-preference){
+  .flow-node{animation:flow-float var(--dur,5s) ease-in-out var(--delay,0s) infinite}
+  .flow-node-1{--dur:4.6s;--delay:0s}
+  .flow-node-2{--dur:5.4s;--delay:.5s}
+  .flow-node-3{--dur:5s;--delay:.9s}
+  .flow-node-4{--dur:5.8s;--delay:.3s}
+  @keyframes flow-float{0%,100%{transform:translate(-50%,-50%)}50%{transform:translate(-50%,calc(-50% - 6px))}}
+}
+@media(max-width:900px){
+  /* 手機上大標要整個寬度，流程圖收到下面、縮成一欄的四個小卡 */
+  .flow-map{position:static;width:100%;aspect-ratio:auto;margin-top:26px;perspective:none}
+  .flow-map-lines{display:none}
+  .flow-map-nodes{position:static;display:grid;grid-template-columns:1fr 1fr;gap:10px;transform:none}
+  .flow-node{position:static;width:auto;transform:none;animation:none;box-shadow:none}
+}
+@media(max-width:520px){.flow-map-nodes{grid-template-columns:1fr}}
+
+/* 運作方式頁的判斷路徑圖。跟首頁那張共用手法（節點、連線、極小幅度的浮動與視差），
+   但畫的是不同的東西：六個判斷依序走，第一個是閘門——踩到就整條路徑跳過。
+   那句「其他全部先停」是這個產品最重要的一條規則，圖要讓人一眼看到它跟其他五個不一樣。
+
+   連線用每個節點自己的 ::after 畫，不用絕對定位的 SVG——欄寬一變 SVG 就對不準，
+   而這張圖從六欄一路縮到一欄。 */
+.decision-map{position:relative;margin:0 0 34px;perspective:1200px}
+.decision-map-nodes{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(6,1fr);gap:12px;transform-style:preserve-3d;transform:rotateX(calc(var(--tilt-x,0)*1deg)) rotateY(calc(var(--tilt-y,0)*1deg));transition:transform .5s var(--ease-out)}
+.decision-map-nodes li{position:relative;padding:14px 13px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--radius-sm);box-shadow:0 10px 24px rgba(29,37,34,.07)}
+.decision-map-nodes li::after{content:"";position:absolute;top:50%;right:-12px;width:12px;border-top:1px dashed rgba(23,32,31,.4)}
+.decision-map-nodes li:last-child::after{display:none}
+.decision-map-nodes b{display:block;font-size:.9rem;line-height:1.3}
+.decision-map-nodes small{display:block;margin-top:4px;color:var(--ink-soft);font-size:.74rem;line-height:1.4}
+/* 閘門那格：實心深色，跟其餘五個一眼分得開。不靠顏色單獨表意——它還多一行說明字。 */
+.decision-map-nodes .gate{background:var(--ink-strong);border-color:var(--ink-strong)}
+.decision-map-nodes .gate b{color:#fff}
+.decision-map-nodes .gate small{color:#c8d2cd}
+/* 寬度收窄是為了讀對意思：橫跨全寬的話，看起來像這句話適用於六格全部，
+   但它只掛在第一格底下——踩到閘門才會發生的事。 */
+.decision-map-branch{max-width:min(560px,52%);margin:12px 0 0;padding:10px 13px;border-left:3px solid var(--coral-deep);background:#f6e6e2;color:var(--ink-strong);font-size:.86rem;line-height:1.55}
+@media(max-width:900px){.decision-map-branch{max-width:none}}
+@media(prefers-reduced-motion:no-preference){
+  .decision-map-nodes li{animation:decision-float var(--dur,5.2s) ease-in-out var(--delay,0s) infinite}
+  .decision-map-nodes li:nth-child(2){--delay:.4s}
+  .decision-map-nodes li:nth-child(3){--delay:.8s}
+  .decision-map-nodes li:nth-child(4){--delay:1.2s}
+  .decision-map-nodes li:nth-child(5){--delay:1.6s}
+  .decision-map-nodes li:nth-child(6){--delay:2s}
+  @keyframes decision-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+}
+@media(max-width:900px){
+  .decision-map{perspective:none}
+  .decision-map-nodes{grid-template-columns:repeat(3,1fr);transform:none}
+  .decision-map-nodes li{animation:none;box-shadow:none}
+  /* 換行之後右邊那條線會指向空氣，收掉 */
+  .decision-map-nodes li::after{display:none}
+}
+@media(max-width:560px){.decision-map-nodes{grid-template-columns:1fr 1fr}}
+
+/* 手機上流程圖改成直排卡片後，hero 變高、上方的小標會被貼頂的導覽壓到。
+   給它自己的呼吸空間，並讓整段從導覽下方開始。 */
+@media(max-width:900px){
+  .home-opening{min-height:0;padding-top:22px}
+  .opening-statement{padding-top:8px}
+  .opening-statement .public-kicker{position:relative;z-index:3}
+}
+
+/* 上面那版把 hero 的上內距調小，還是壓到——因為根因不在內距。
+   手機上導覽會換成兩行、比桌機高，而 hero 的第一列（含小標）是照固定值排的，
+   剛好落在導覽底下。改成量導覽實際佔的高度，hero 從它下面開始。 */
+@media(max-width:900px){
+  .public-site .site-header{position:sticky}
+  .home-opening{padding-top:16px}
+  .opening-meta{display:none}
+  .opening-statement{padding-top:6px}
+}
+
+/* 那行小標（留意・選擇・確認）在手機上一直被貼頂的導覽壓住。
+   它只是氣氛用的三個詞，遮住的時候比沒有更糟——一層疊一層看起來像壞掉。
+   手機上直接不顯示，桌機保留。 */
+@media(max-width:900px){.home-opening .public-kicker{display:none}}
+
+/* 公開頁的大數字（統計、指標）同樣用等寬數字排。 */
+.public-site .big-number,.public-site .metric-card strong,.evidence-band blockquote strong{font-variant-numeric:tabular-nums}
+
+/* ============================================================================
+   2026-07-29 首頁中文大標撞上流程圖
+   ----------------------------------------------------------------------------
+   中文那句比英文長，字級又是照視窗寬度算的，於是在寬螢幕上一路長到右邊，把流程圖的
+   第三張卡整個蓋掉——Boss 說的「吃字」就是這個。
+
+   兩種語言的同一句話長度本來就不一樣，所以標題的寬度上限也不能共用一個值：
+   中文限制在左半邊，右邊留給流程圖；英文本來就排得下，維持原樣。
+   ========================================================================== */
+@media(min-width:901px){
+  html[lang^="zh"] .opening-statement{width:min(1320px,62%)}
+  html[lang^="zh"] .opening-statement h1{max-width:14em;font-size:clamp(3rem,5.4vw,6rem)}
+  html[lang^="zh"] .opening-lower{grid-template-columns:minmax(0,1fr) auto}
+}
