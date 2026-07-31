@@ -4,7 +4,7 @@ A deployable interactive prototype for the 2026 Presidential Hackathon Internati
 
 DailyAble turns a short daily check-in into:
 
-- one manageable, non-clinical next step;
+- two manageable, non-clinical next steps;
 - a participant-controlled supporter option;
 - an actionable supporter queue with observable reasons and consent scope;
 - a clear explanation of the boundaries between deterministic rules, AI assistance, and human judgement.
