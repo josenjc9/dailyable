@@ -244,26 +244,57 @@ const DEMO_RELATIONSHIPS = [
   { id: 'demo-rel-1', participantId: 'alex-01', status: 'active', sharingLevel: 'trend', scopes: ['checkin_summary', 'trend_chart'], participantName: 'Alex', supporterName: 'Jordan', sharing: 'Daily summary and trend shape', confirmedAt: '2026-07-20T02:00:00.000Z' }
 ];
 
+// 上面那幾份準備好的資料，日期是照彼此的間隔寫的模板，讀取時才整組平移到今天。
+//
+// 為什麼不能留絕對日期：那些日期一旦寫死，過幾天最新一筆就滑出「最近七天」那個窗，
+// 就診摘要的「跟自己以前比」整欄算不出來，畫面顯示的會是「歷史不足以比較」——
+// 而那正是這個服務最想給人看的一句話。2026-08-03 實際踩到：資料停在 7/26，
+// 線上站的收縮壓比較欄是空的，回歸測試也跟著掉一項。
+const DEMO_TEMPLATE_LATEST_DAY = Date.parse('2026-07-26T00:00:00.000Z');
+// 最新一筆落在今天往前三天。實測 2 到 4 天都會算出同一組數字（近期 144.3、
+// 自己的基線 125.6、高 18.7），取中間那個，時區與造訪時刻前後各留一天餘裕。
+const DEMO_ANCHOR_LAG_DAYS = 3;
+const DAY_MS = 86_400_000;
+// 平移量以整天計算，所以每一筆原本的時刻（08:12、23:55 這些）原封不動跟著走。
+function demoDateShift(now) {
+  return Math.floor(now / DAY_MS) * DAY_MS - DEMO_ANCHOR_LAG_DAYS * DAY_MS - DEMO_TEMPLATE_LATEST_DAY;
+}
+
+const DEMO_DATE_FIELDS = ['measuredAt', 'createdAt', 'takenAt', 'eatenAt', 'confirmedAt', 'sharedAt'];
+function shiftDemoDates(entries, shift) {
+  return entries.map((entry) => {
+    const moved = { ...entry };
+    for (const field of DEMO_DATE_FIELDS) {
+      const original = Date.parse(entry[field]);
+      if (Number.isFinite(original)) moved[field] = new Date(original + shift).toISOString();
+    }
+    return moved;
+  });
+}
+
+// 每次呼叫都給一份新的、已經對齊今天的資料。
+function demoSeed(now = Date.now()) {
+  const shift = demoDateShift(now);
+  return {
+    checkIns: shiftDemoDates(DEMO_CHECK_INS, shift),
+    vitals: shiftDemoDates(DEMO_VITALS, shift),
+    meals: shiftDemoDates(DEMO_MEALS, shift),
+    medications: shiftDemoDates(DEMO_MEDICATIONS, shift),
+    medicationPlans: DEMO_MEDICATION_PLANS.map((entry) => ({ ...entry })),
+    relationships: shiftDemoDates(DEMO_RELATIONSHIPS, shift),
+    queue: shiftDemoDates(DEMO_QUEUE, shift)
+  };
+}
+
 // The stored list names the other person; the prepared one carried both names and no answer
 // to "who is this", so every demo card was headed "Your connection" — on the one page whose
 // subject is who you are connected to.
 // 這一輪展示訪客看到的資料。有訪客編號就用他自己那份（他填過的都在裡面），沒有就退回
 // 準備好的那份——舊連結、爬蟲、或 cookie 被擋掉的情況都還是看得到完整的展示。
-function demoDataFor(user) {
-  const seed = {
-    checkIns: DEMO_CHECK_INS,
-    vitals: DEMO_VITALS,
-    meals: DEMO_MEALS,
-    medications: DEMO_MEDICATIONS,
-    medicationPlans: DEMO_MEDICATION_PLANS,
-    relationships: DEMO_RELATIONSHIPS,
-    queue: DEMO_QUEUE
-  };
-  // 沒有訪客編號時給的是複本，不是那份共用的原始資料——不然一個沒帶 cookie 的請求寫進來，
-  // 就會改到之後每一位訪客看到的東西。
-  return demoStateFor(user?.stateId, seed) || Object.fromEntries(
-    Object.entries(seed).map(([name, entries]) => [name, [...entries]])
-  );
+function demoDataFor(user, now = Date.now()) {
+  // demoSeed 每次都回傳新物件，所以沒有訪客編號時直接給出去也不會污染下一位訪客。
+  const seed = demoSeed(now);
+  return demoStateFor(user?.stateId, seed) || seed;
 }
 
 function demoRecordCounts(state, sharedCheckIns) {
@@ -1170,8 +1201,9 @@ async function handle(req, res, context) {
   if (method === 'GET' && url.pathname === '/api/clinical-summary') {
     if (!user) return json(res, 401, { error: 'Sign in required.' });
     if (user.role !== 'participant') return json(res, 403, { error: 'Participant role required.' });
-    const [vitals, medications, meals, medicationPlans] = user.demo
-      ? [DEMO_VITALS, DEMO_MEDICATIONS, DEMO_MEALS, DEMO_MEDICATION_PLANS]
+    const prepared = user.demo ? demoSeed(context.now().getTime()) : null;
+    const [vitals, medications, meals, medicationPlans] = prepared
+      ? [prepared.vitals, prepared.medications, prepared.meals, prepared.medicationPlans]
       : await Promise.all([
         context.store.listVitalRecords(user.id),
         context.store.listMedicationRecords(user.id),

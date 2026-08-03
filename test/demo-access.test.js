@@ -343,14 +343,15 @@ test('every endpoint the pages read answers the demo with data', async () => {
   const body = await (await fetch(`${baseUrl}/api/relationships/demo-rel-1/body-records`, { headers: { cookie: supporter } })).json();
   const measures = body.summary?.measures || {};
   assert.ok(Object.keys(measures).length, 'the body records panel must have measures to show');
-  assert.deepEqual(body.recordCounts, {
-    checkIns: 34,
-    vitals: 20,
-    medications: 13,
-    meals: 11,
-    from: '2026-05-06T00:00:00.000Z',
-    to: '2026-07-26T08:12:00.000Z'
-  });
+  const { from, to, ...counts } = body.recordCounts;
+  assert.deepEqual(counts, { checkIns: 34, vitals: 20, medications: 13, meals: 11 });
+  // 日期不再寫死。準備好的那份資料是照間隔寫的模板，每次讀取都平移到今天，所以這裡驗的是
+  // 平移本身有沒有做對：最新一筆落在今天往前約三天，最舊的與它相距原本的 81 天。
+  // 寫死絕對日期正是 2026-08-03 那次的病根——日子一過，最新一筆就滑出「最近七天」，
+  // 就診摘要的比較欄整個算不出來，而測試因為對著同一組死日期，也跟著一起錯過。
+  const daysSinceNewest = (Date.now() - Date.parse(to)) / 86_400_000;
+  assert.ok(daysSinceNewest > 2 && daysSinceNewest < 5, `the newest prepared record should sit ~3 days back, got ${daysSinceNewest.toFixed(1)} days`);
+  assert.equal(Math.round((Date.parse(to) - Date.parse(from)) / 86_400_000), 81, 'the span between the oldest and newest record must not change');
   for (const key of ['systolic', 'diastolic', 'glucose']) {
     assert.ok(measures[key]?.recordedInWindow > 0, `a supporter should see ${key} readings, not an empty panel`);
   }
